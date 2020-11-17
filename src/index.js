@@ -9,7 +9,7 @@ import App from "./App";
 
 // Your GraphQL Endpoint here
 const client = new ApolloClient({
-  uri: "https://somethingsomething.herokuapp.com/v1/graphql",
+  uri: "https://tennis-scores-tk.herokuapp.com/v1/graphql",
 });
 
 ReactDOM.render(
