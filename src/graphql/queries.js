@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const GET_ALL_MATCHES = gql`
-  query LiveMatches {
+  subscription LiveMatches {
     matches(order_by: { finished: asc, started_at: asc }) {
       id
       started_at

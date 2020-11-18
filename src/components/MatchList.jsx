@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box } from "@material-ui/core";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery, useSubscription } from "@apollo/react-hooks";
 import ErrorIcon from "@material-ui/icons/Error";
 import moment from "moment";
 import { GET_ALL_MATCHES } from "../graphql/queries";
@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
 
 function MatchList() {
   const classes = useStyles();
-  const { loading, error, data } = useQuery(GET_ALL_MATCHES);
-  console.log("DATA:", data);
+  // const { loading, error, data } = useQuery(GET_ALL_MATCHES);
+  const { data, error, loading } = useSubscription(GET_ALL_MATCHES);
 
   if (loading) return "Loading...";
   if (error)
